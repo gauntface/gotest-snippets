@@ -5,6 +5,15 @@
 This VSCode extension will make it a little easier to write tests in golang by
 generating the majority of the boiler plate needed for common tests.
 
+## Installation
+
+To install the extension from VSCode:
+
+1. Press `Ctrl + P` in VSCode
+1. Enter the following: `ext install Gauntface.gotest-snippets`
+
+Optionally, checkout the extension on the [VisualStudio Marketplace here](https://marketplace.visualstudio.com/items?itemName=Gauntface.gotest-snippets).
+
 ## Snippets
 
 - gotest
