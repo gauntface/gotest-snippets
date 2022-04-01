@@ -15,8 +15,8 @@
     "keywords": ["go", "golang", "gotest", "testing", "snippets"],
     "icon": "images/icon-256x256.png",
     "galleryBanner": {
-        "color": "#E0EEE3",
-        "theme": "dark"
+        "color": "#A1CBA9",
+        "theme": "light"
       },
     "contributes": {
         "snippets": [
