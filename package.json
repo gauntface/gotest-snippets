@@ -2,7 +2,7 @@
     "name": "gotest-snippets",
     "displayName": "gotest-snippets",
     "description": "A handful of snippets to make writing tests for golang a little easier.",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "gauntface",
     "license": "MIT",
     "engines": {
@@ -15,7 +15,7 @@
     "keywords": ["go", "golang", "gotest", "testing", "snippets"],
     "icon": "images/icon-256x256.png",
     "galleryBanner": {
-        "color": "#A1CBA9",
+        "color": "#E0EEE3",
         "theme": "light"
       },
     "contributes": {
