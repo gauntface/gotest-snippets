@@ -2,13 +2,22 @@
     "name": "gotest-snippets",
     "displayName": "gotest-snippets",
     "description": "A handful of snippets to make writing tests for golang a little easier.",
-    "version": "0.0.1",
+    "version": "0.0.2",
+    "publisher": "gauntface",
+    "license": "MIT",
     "engines": {
         "vscode": "^1.66.0"
     },
     "categories": [
-        "Snippets"
+        "Snippets",
+        "Testing"
     ],
+    "keywords": ["go", "golang", "gotest", "testing", "snippets"],
+    "icon": "images/icon-256x256.png",
+    "galleryBanner": {
+        "color": "#E0EEE3",
+        "theme": "dark"
+      },
     "contributes": {
         "snippets": [
             {
@@ -20,5 +29,10 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/gauntface/gotest-snippets.git"
-      }
+      },
+      "bugs": {
+        "url": "https://github.com/gauntface/gotest-snippets/issues",
+        "email": "hello@gaunt.dev"
+      },
+      "homepage": "https://www.gaunt.dev/projects/gotest"
 }
