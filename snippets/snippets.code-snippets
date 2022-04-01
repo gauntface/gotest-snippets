@@ -1,0 +1,86 @@
+{
+	"Table driven go test": {
+		"scope": "go",
+		"prefix": "gotest",
+		"body": [
+			"func Test${1:FunctionName}(t *testing.T) {",
+			"\ttests := []struct {",
+			"\t\tdescription string",
+			"\t\twantError error",
+			"\t}{",
+			"\t\t{",
+			"\t\t\tdescription: \"\",",
+			"\t\t\twantError: nil,",
+			"\t\t},",
+			"\t}",
+			"",
+			"\tfor _, tt := range tests {",
+			"\t\tt.Run(tt.description, func(t *testing.T) {",
+			"\t\t\terr := ${1:FunctionName}()",
+			"\t\t\tif !errors.Is(err, tt.wantError) {",
+			"\t\t\t\tt.Fatalf(\"Unexpected error; got %v, want %v\", err, tt.wantError)",
+			"\t\t\t}",
+			"\t\t})",
+			"\t}",
+			"}",
+	 	],
+	 	"description": "Table driven go test"
+	},
+	"Basic diff for go test": {
+		"scope": "go",
+		"prefix": "gotest-diff",
+		"body": [
+			"if diff := cmp.Diff(tt.want, got); diff != \"\" {",
+			"\tt.Errorf(\"Unexpected result; diff %v\", diff)",
+			"}",
+	 	],
+	 	"description": "Basic diff for go test"
+	},
+	"Diff with options for go test": {
+		"scope": "go",
+		"prefix": "gotest-diffopts",
+		"body": [
+			"opts := []cmp.Option{",
+			"\t$0",
+			"}",
+			"if diff := cmp.Diff(tt.want, got, opts...); diff != \"\" {",
+			"\tt.Errorf(\"Unexpected result; diff %v\", diff)",
+			"}",
+	 	],
+	 	"description": "Diff with options for go test"
+	},
+	"TestMain with reset function for go test": {
+		"scope": "go",
+		"prefix": "gotest-main",
+		"body": [
+			"var reset func()",
+			"",
+			"func TestMain(m *testing.M) {",
+			"\torig${2:GlobalVariable} := ${1:globalVariable}",
+			"\treset = func() {",
+			"\t\t${1:globalVariable} = orig${2:GlobalVariable}",
+			"\t}",
+			"\tm.Run()",
+			"}",
+	 	],
+	 	"description": "TestMain with reset function for go test"
+	},
+	"Compare errors in a go test": {
+		"scope": "go",
+		"prefix": "gotest-errors",
+		"body": [
+			"if !errors.Is(err, tt.wantError) {",
+			"\tt.Fatalf(\"Unexpected error; got %v, want %v\", err, tt.wantError)",
+			"}",
+	 	],
+	 	"description": "Compare errors in a go test"
+	},
+	"Create error to inject in go tests": {
+		"scope": "go",
+		"prefix": "gotest-errinject",
+		"body": [
+			"var errInjected = errors.New(\"injected error\")",
+	 	],
+	 	"description": "Create error to inject in go tests"
+	},
+}
